@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block app_content %}
+  <div class="row">
+    <div class="col-md-12">
+      <div class="welcome">
+        <h1>Welcome to Wormwood Cars!</h1>
+        <h4>There's never been a better time to buy your next best car!</h4>
+        <img class="banner" src="../static/media/images/banner.jpg" alt="Home Banner">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    {% for car in inventory %}
+      <div class="col-md-4">
+        <div class="card">
+          <img src="" alt="" class="card-img">
+          <div class="car-price"></div>
+          <div class="car-name"></div>
+          <button class="btn btn-primary"></button>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

@@ -1,0 +1,59 @@
+select full_name, date_created from customer
+
+
+select count(distinct customer.full_name) from loan
+inner join payment on loan.payment_id = payment.payment_id
+inner join car on payment.car_id = car.car_id
+inner join customer on car.cust_id = customer.cust_id
+where credit_score > 650;
+
+
+CREATE FUNCTION total_paid(customer_name VARCHAR)
+ RETURNS numeric(9,2) AS
+BEGIN
+	select full_name, sum(amount) from payment
+	inner join car on payment.car_id = car.car_id
+	inner join customer on car.cust_id = customer.cust_id
+	group by customer.cust_id
+	having full_name = customer_name
+END;
+LANGUAGE language_name;
+
+
+select date_started, concat(make,' ',model), full_name from maintenance
+inner join payment on maintenance.payment_id = payment.payment_id
+inner join car on payment.car_id = car.car_id
+inner join customer on car.cust_id = customer.cust_id
+
+
+select full_name from customer
+where cust_id = (
+	select cust_id from car
+	where vin = '1FDPF82KXJVA69210'
+);
+
+
+SELECT * from insurance
+inner join car on insurance.car_id = car.car_id
+inner join customer on car.cust_id = customer.cust_id
+
+
+(select full_name, address from customer
+inner join address on customer.add_id = address.add_id)
+union
+(select full_name, address from staff
+inner join address on staff.add_id = address.add_id)
+
+
+select full_name from car
+inner join customer on car.cust_id = customer.cust_id
+group by customer.cust_id having count(customer.cust_id) > 1
+
+
+select * from staff
+where department = 'Maintenance'
+
+
+
+
+

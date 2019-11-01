@@ -1,0 +1,40 @@
+html, body {
+  overflow-x: hidden;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  background-color: #ccf;
+}
+
+#wrap {
+  min-height: 100%;
+}
+
+main {
+  padding-bottom: 150px;
+}
+
+.welcome{
+  text-align: center;
+}
+
+footer {
+  background-color: #343A40;
+  position: relative;
+  margin-top: -150px;
+  height: 150px;
+  clear:both;
+  padding-top:20px;
+}
+
+footer p {
+  color: #ccf;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.dealer{
+  width: 80%;
+  margin: 20px auto;
+  max height: 100%;
+}

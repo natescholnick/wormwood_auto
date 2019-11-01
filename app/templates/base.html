@@ -1,0 +1,92 @@
+{% extends 'bootstrap/base.html' %}
+
+
+{% block styles %}
+  {{ super() }}
+  <link rel="stylesheet" href="../static/css/main.css">
+{% endblock %}
+
+
+
+{% block scripts %}
+  {{ super() }}
+{% endblock %}
+
+
+
+{% block title %}
+  {{ title }} - Wormwood Cars
+  {% endblock %}
+
+{% block navbar %}
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+
+      {% if title == 'Home' %}
+        <li class="nav-item active">
+      {% else %}
+        <li class="nav-item">
+      {% endif %}
+        <a class="nav-link" href="{{ url_for('index') }}">{% if current_user.is_authenticated  %}Inventory{% else %}Home{% endif %}</a>
+      </li>
+
+      {% if title == 'Customers' %}
+        <li class="nav-item active">
+      {% else %}
+        <li class="nav-item">
+      {% endif %}
+        <a class="nav-link" href="{{ url_for('customers') }}">Customer Look-up</a>
+      </li>
+
+      {% if title == 'Maintenance' %}
+        <li class="nav-item active">
+      {% else %}
+        <li class="nav-item">
+      {% endif %}
+        <a class="nav-link" href="{{ url_for('maintenance') }}">Maintanence Records</a>
+      </li>
+
+      {% if title == 'Login' %}
+        <li class="nav-item active">
+      {% else %}
+        <li class="nav-item">
+      {% endif %}
+        <a class="nav-link" href="{{ url_for('login') }}">Employee Login</a>
+      </li>
+    </ul>
+  </nav>
+{% endblock %}
+
+
+{% block content %}
+  <header>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <script type="text/javascript">
+            alert('{{ message }}');
+          </script>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+  </header>
+
+  <div id='wrap'>
+    <main>
+      {% block app_content %}
+
+      {% endblock %}
+    </main>
+  </div>
+
+<footer>
+  <div class="row">
+    <div class="col-md-5 offset-md-2">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis deleniti, blanditiis, esse temporibus corrupti obcaecati reiciendis odio earum, maxime placeat maiores aspernatur praesentium tempore inventore ex saepe veniam quos laborum.</p>
+    </div>
+    <div class="col-md-3">
+      <img class="dealer" src="../static/media/images/dealer.jpg" alt="">
+    </div>
+  </div>
+</footer>
+{% endblock %}
