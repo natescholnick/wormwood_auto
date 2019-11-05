@@ -6,25 +6,42 @@ html, body {
   background-color: #ccf;
 }
 
-#wrap {
-  min-height: 100%;
-}
-
-main {
-  padding-bottom: 150px;
-}
-
 .welcome{
   text-align: center;
+  margin-bottom: 30px;
+}
+
+#inv_section {
+  margin: 0 20%;
+}
+
+.car-card{
+  padding: 15px;
+  margin: 15px 0;
+}
+
+.car-name {
+  font-weight: bold;
+}
+
+.btn-primary {
+  text-align: center;
+  max-width: 50%;
+}
+
+th {
+  width: 20%;
+}
+
+#customer_cars {
+  margin-top: 30px;
+  width: 100%;
 }
 
 footer {
   background-color: #343A40;
-  position: relative;
-  margin-top: -150px;
-  height: 150px;
-  clear:both;
   padding-top:20px;
+  margin-top: 30px;
 }
 
 footer p {
@@ -35,6 +52,5 @@ footer p {
 
 .dealer{
   width: 80%;
-  margin: 20px auto;
   max height: 100%;
 }

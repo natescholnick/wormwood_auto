@@ -6,20 +6,20 @@
     <div class="col-md-12">
       <div class="welcome">
         <h1>Welcome to Wormwood Cars!</h1>
-        <h4>There's never been a better time to buy your next best car!</h4>
+        <h4>There's never been a better time for me to take your money!</h4>
         <img class="banner" src="../static/media/images/banner.jpg" alt="Home Banner">
       </div>
     </div>
   </div>
 
-  <div class="row">
+  <div id="inv_section" class="row">
     {% for car in inventory %}
       <div class="col-md-4">
-        <div class="card">
-          <img src="" alt="" class="card-img">
-          <div class="car-price"></div>
-          <div class="car-name"></div>
-          <button class="btn btn-primary"></button>
+        <div class="card car-card">
+          <img src="http://placehold.it/250x250" alt="Car Image" class="card-img">
+          <div class="car-price">{{ "$%.2f"|format(car.price) }}</div>
+          <div class="car-name">{{ car.year }} {{ car.make }} {{ car.model }}</div>
+          <button class="btn btn-primary">Take My Money!</button>
         </div>
       </div>
     {% endfor %}

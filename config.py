@@ -8,4 +8,4 @@ class Config():
 
     # URI for SQLite database
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
-    'postgresql://nate:5759@/var/run/postgresql:5432/Car Dealership'
+    'postgres+psycopg2://nate:5759@localhost:5432/dealership'

@@ -18,8 +18,7 @@ class CustomerForm(FlaskForm):
 
 class MaintenanceForm(FlaskForm):
     payment_id = IntegerField('Payment ID #', validators=[DataRequired()])
-    staff = IntegerField('Staff ID #', validators=[DataRequired()])
-    start = DateTimeField('Start Date', validators=[DataRequired()])
-    finish = DateTimeField('End Date', validators=[DataRequired()])
+    start_date = DateTimeField('Start Date', validators=[DataRequired()])
+    end_date = DateTimeField('End Date', validators=[DataRequired()])
     description = TextAreaField('What maintenance was performed?', validators=[DataRequired()])
     submit = SubmitField('Add Record')

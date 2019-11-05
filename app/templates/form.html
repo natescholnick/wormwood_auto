@@ -11,4 +11,31 @@
       </div> <!-- ends col-4 -->
     </div> <!-- ends row -->
   </div> <!-- ends container -->
+
+  <!-- Customers Display -->
+  <div class="container">
+    <div class="row">
+      {% if title == 'Customers' %}
+        <table id="customer_cars">
+          <tr>
+            <th>Customer Name</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Color</th>
+            <th>Year</th>
+          </tr>
+          {% for car in cars %}
+            <tr>
+              <td>{{ car.full_name }}</td>
+              <td>{{ car.make }}</td>
+              <td>{{ car.model }}</td>
+              <td>{{ car.color }}</td>
+              <td>{{ car.year }}</td>
+            </tr>
+          {% endfor %}
+        </table>
+      {% endif %}
+    </div>
+  </div>
+
 {% endblock %}
